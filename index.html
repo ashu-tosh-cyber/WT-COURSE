@@ -1,104 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Gas Booking Management System</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="style.css"/>
 </head>
-
 <body>
+    <header class="navbar">
+        <h1 class="logo">WEEZING</h1>
+        <NAV>
+            <a href="#features">Features</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </NAV>
+    </header>
+    <section class="main">
+        <h2>Affordable gas, but easier to access</h2>
+        <p>We sell good quality biogas at reasonable prices</p>
+        <form action="https://pokemon.fandom.com/wiki/Weezing" method="get">
+        <button type="submit">Get Info</button>
+        </form>
+    </section>
+     <section id="features" class="features">
+        <div class="feature">
+            <h3>Renewable</h3>
+            <p>Optimized for the world.</p>
+        </div>
+        <div class="feature">
+            <h3>Eco-Friendly</h3>
+            <p>Has much lesser CO2 emmisions.</p>
+        </div>
+        <div class="feature">
+            <h3>Affordable</h3>
+            <p>Easy to avail(Just give us a call on 1800-2100-2400)</p>
+        </div>
+    </section>
 
-    <h1>Gas Booking Management System</h1>
-
-    <p>
-        Welcome to the Gas Booking Management System.😎
-        This system helps customers book gas cylinders very easily withut any hassle😊.
-    </p>
-
-    <hr>
-
-    <h2>Customer Details🤗</h2>
-
-    <form>
-        <p>
-            Customer Name:<br>
-            <input type="text" name="customer_name">
-        </p>
-
-        <p>
-            Address:<br>
-            <textarea name="address" rows="4" cols="30"></textarea>
-        </p>
-
-        <p>
-            Mobile Number:<br>
-            <input type="text" name="mobile">
-        </p>
-
-        <p>
-            Gas Type:<br>
-            <input type="radio" name="gas_type"> LPG<br>
-            <input type="radio" name="gas_type"> PNG
-        </p>
-
-        <p>
-            Number of Cylinders:<br>
-            <select name="quantity">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-            </select>
-        </p>
-
-        <p>
-            <input type="submit" value="Book Gas">
-            <input type="reset" value="Clear">
-        </p>
-    </form>
-
-    <hr>
-
-    <h2>Booking Records</h2>
-
-    <table border="1">
-        <tr>
-            <th>Booking ID</th>
-            <th>Customer Name</th>
-            <th>Gas Type</th>
-            <th>Quantity</th>
-            <th>Status</th>
-        </tr>
-
-        <tr>
-            <td>101</td>
-            <td>Piyush</td>
-            <td>LPG</td>
-            <td>1</td>
-            <td>Booked</td>
-        </tr>
-
-        <tr>
-            <td>102</td>
-            <td>Suryansh</td>
-            <td>PNG</td>
-            <td>2</td>
-            <td>Delivered</td>
-        </tr>
-    </table>
-
-    <hr>
-
-    <h3>Contact Information</h3>
-
-    <p>
-        Company Name: Ashutosh Gas Services<br>
-        Phone: 1234567890<br>
-        Email: ashutoshgasman@gas.com
-    </p>
-
-    <p>
-        <a href="#">Home</a> |
-        <a href="#">New Booking</a> |
-        <a href="#">Booking Status</a>
-    </p>
-
+    <section id="about" class="about">
+         <h2>About Us</h2>
+         <p>We plan on cretaing a simple infrastructure to help all citizens avail easy and accessible Biogas, thus reducing the carbon footprint. </p>
+    </section>
+    <footer id="contact">
+        <p>© 2026 Weezing. All rights reserved.</p>
+    </footer>
 </body>
 </html>
