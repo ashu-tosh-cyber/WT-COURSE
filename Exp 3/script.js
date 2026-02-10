@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const galleryContainer = document.querySelector('.gallery-container');
     const imageUrls = [
-        "https://www.dreamstime.com/royalty-free-stock-images-enjoying-good-music-image3953579",
+        "https://www.vecteezy.com/photo/11215319-planet-earth-with-sunrise-in-space",
         "https://www.dreamstime.com/waterfall-nature-green-tree-slow-speed-photography-cool-peace-image413111679",
         "https://thumbs.dreamstime.com/b/woman-jump-777955.jpg?w=768",
         "https://www.dreamstime.com/royalty-free-stock-images-jump-girl-hair-sky-image221199",
