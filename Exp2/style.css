@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+header {
+    background: #000000;
+    color: rgb(119, 0, 255);
+    padding: 25px;
+}
+header a {
+    color: rgb(0, 255, 21);
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.main {
+    background: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 80px 25px;
+}
+.main button {
+    padding: 7px 56px;
+    border: none;
+    cursor: pointer;
+}
+
+.features {
+    padding: 40px 20px;
+}
+.feature {
+    margin-bottom: 20px;
+}
+
+.about {
+    padding: 40px 20px;
+    background: #070a30;
+}
+footer {
+    background: #000000;
+    color: rgb(132, 0, 255);
+    padding: 15px;
+}
