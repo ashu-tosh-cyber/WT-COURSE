@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pokémon Quiz</title>
+</head>
+
+<body>
+
+<div class="quiz-container">
+    <h1>Pokémon Quiz</h1>
+    <div class="question" id="question">Question text</div>
+    <div class="answers" id="answers"></div>
+    <button id="nextBtn">Next Question</button>
+    <div id="score"></div>
+</div>
+
+<script>
+const quizData = [
+    {
+        question: "Who is Ash's first Pokémon?",
+        answers: ["Charmander", "Bulbasaur", "Pikachu", "Squirtle"],
+        correct: 2
+    },
+    {
+        question: "Which type is super effective against Water?",
+        answers: ["Fire", "Grass", "Normal", "Rock"],
+        correct: 1
+    },
+    {
+        question: "What region is Gen 1 set in?",
+        answers: ["Johto", "Hoenn", "Kanto", "Sinnoh"],
+        correct: 2
+    },
+    {
+        question: "What Pokemon is a Final stage Evolution?",
+        answers: ["Charizard", "Misty", "Squirtle", "Phanpy"],
+        correct: 0
+    },
+    {
+        question: "Who is the gym leader for First gym in Kanto?",
+        answers: ["Pikachu","Sabrina","Brock","Gary"],
+        correct: 2
+    },
+    {
+        question: "Who is the gym leader for Viridian City?",
+        answers: ["Gary","Misty","TeaM Rocket","Badass Old Guy"],
+        correct: 2
+    }
+];
+
+let currentQuestion = 0;
+let score = 0;
+
+const questionEl = document.getElementById("question");
+const answersEl = document.getElementById("answers");
+const nextBtn = document.getElementById("nextBtn");
+const scoreEl = document.getElementById("score");
+
+function loadQuestion() {
+    resetState();
+    const current = quizData[currentQuestion];
+    questionEl.textContent = current.question;
+
+    current.answers.forEach((answer, index) => {
+        const button = document.createElement("button");
+        button.textContent = answer;
+        button.addEventListener("click", () => selectAnswer(index));
+        answersEl.appendChild(button);
+    });
+}
+
+function resetState() {
+    nextBtn.style.display = "none";
+    answersEl.innerHTML = "";
+}
+
+function selectAnswer(index) {
+    const correctIndex = quizData[currentQuestion].correct;
+    const buttons = answersEl.querySelectorAll("button");
+
+    buttons.forEach((btn, i) => {
+        btn.disabled = true;
+        if (i === correctIndex) {
+            btn.style.backgroundColor = "green";
+            btn.style.color = "white";
+        }
+    });
+
+    if (index === correctIndex) {
+        score++;
+    } else {
+        buttons[index].style.backgroundColor = "red";
+        buttons[index].style.color = "white";
+    }
+
+    nextBtn.style.display = "block";
+}
+
+nextBtn.addEventListener("click", () => {
+    currentQuestion++;
+    if (currentQuestion < quizData.length) {
+        loadQuestion();
+    } else {
+        showScore();
+    }
+});
+
+function showScore() {
+    resetState();
+    questionEl.textContent = "Quiz Completed!";
+    scoreEl.textContent = "Your Score: " + score + " / " + quizData.length;
+    nextBtn.textContent = "Restart";
+    nextBtn.style.display = "block";
+    nextBtn.onclick = () => {
+        currentQuestion = 0;
+        score = 0;
+        scoreEl.textContent = "";
+        nextBtn.textContent = "Next Question";
+        loadQuestion();
+    };
+}
+
+loadQuestion();
+</script>
+
+</body>
+</html>
