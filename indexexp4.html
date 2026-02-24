@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Teller</title>
+
+    <style>
+        body {
+            background-color:firebrick;
+            text-align: center;
+        }
+
+        button {
+            background-color:rgb(255,125,30);
+            padding: 5px 10px;
+        }
+        #result{
+            color: coral;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Age Teller</h1>
+
+    <label for="inp" style="color:aqua;">Enter Your Age:</label>
+    <input type="text" id="inp" placeholder="Your age">
+    <button onclick="aged()">Get Value</button>
+
+    <p id="result"></p>
+
+    <script>
+        function aged() {
+            const inpu = document.getElementById("inp");
+            const result = document.getElementById("result");
+            const age = parseInt(inpu.value);
+
+            if (isNaN(age)) {
+                result.textContent = "Please enter a valid number";
+                return;
+            }
+            if (age < 5) {
+                result.textContent = "You are an infant";
+            }
+
+            else if (age < 10) {
+                result.textContent = "You are a child";
+            }
+            else if (age < 18) {
+                result.textContent = "You are a teenager";
+            }
+            else {
+                result.textContent = "You are an adult";
+            }
+        }
+    </script>
+</body>
+</html>
